@@ -128,10 +128,42 @@ makeForm = function() {
     var html="";
     url = window.document.location.href;
     for (var i = 0; i < bookmarkletURLs.length; i++) {
-		var captureURL=bookmarkletURLs[i];
+		var captureURL = bookmarkletURLs[i];
 		if(url.match(captureURL)) {
-			var captureMethod = bookmarkletCaptureMethods[i];
-			html = eval(captureMethod+ '()');
+			switch (bookmarkletCaptureMethods[i]) {
+				case "getOxfordData":
+					html = getOxfordData();
+					break;
+				case "getJstorData":
+					html = getJstorData();
+					break;
+				case "getpubmeddata":
+					html = getpubmeddata();
+					break;
+				case "getpubacsdata":
+					html = getpubacsdata();
+					break;
+				case "getworldcatdata":
+					html = getworldcatdata();
+					break;
+				case "getIngentaData":
+					html = getIngentaData();
+					break;
+				case "getGCAData":
+					html = getGCAData();
+					break;
+				case "getIEEEData":
+					html = getIEEEData();
+					break;
+				case "getHighwireData":
+					html = getHighwireData();
+					break;
+				case "getPubsData":
+					html = getPubsData();
+					break;
+				default:
+					throw "Invalid method";
+			}
 			if(html == false) {
 				return false;
 			}	
