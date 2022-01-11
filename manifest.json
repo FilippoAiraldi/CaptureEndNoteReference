@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Capture EndNote Reference",
 	"author": "Filippo Airaldi",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "capture a reference with just one click.",
 	"homepage_url": "https://github.com/FilippoAiraldi/CaptureEndNoteReference",
 	"permissions": [
@@ -36,5 +36,8 @@
 			"96": "icons/icon-96.png",
 			"128": "icons/icon-128.png"
 		}
-	}
+	},
+	"web_accessible_resources": [
+		"scripts/popup.js"
+	]
 }
